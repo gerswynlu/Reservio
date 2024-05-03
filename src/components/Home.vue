@@ -5,17 +5,21 @@
      </div>
      <header>
       <div id="app">
-      <nav>
-        <button @click="goTo('/')">Home</button>
-          <button @click="goTo('/restaurants')">Restaurants</button>
-          <button @click="goTo('/faq')">FAQ</button>
-          <button @click="goTo('/contact')">Contact Us</button>
-      </nav>
+        <nav>
+  <a class="button" href="/">Home</a>
+  <a class="button" href="/restaurants">Restaurants</a>
+  <a class="button" href="/contact">Reservation</a>
+  <a class="button" href="/faq">FAQ</a>
+  <a class="button" href="/contact">Contact Us</a>
+</nav>
+
       <main>
         <router-view></router-view>
       </main>
       </div>
      </header>
+
+     
      
      <div class="top-restaurants">
       <h2>Top Restaurants</h2>
@@ -212,8 +216,7 @@ nav ul li a:hover {
  }
  
  .button button {
-  display: block;
-  width: 100%;
+  display: inline-block; /* Change display to inline-block */
   padding: 15px; /* Adjust padding as needed */
   background-color: #54575a;
   color: white;
@@ -223,6 +226,13 @@ nav ul li a:hover {
   margin-top: 10px;
   height: 50px; /* Set a fixed height for all buttons */
   line-height: 20px; /* Adjust line height for proper text alignment */
-
+  text-align: center; /* Center text within the button */
+  text-decoration: none; /* Remove default underline */
+  margin-right: 10px; /* Add margin between buttons */
 }
+
+.button button:hover {
+  background-color: #44464a; /* Darken color on hover */
+}
+
  </style>
