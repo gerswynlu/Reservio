@@ -1,23 +1,20 @@
-import { createApp } from 'vue';
+// router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../components/Home.vue'; // Adjust import paths for components
-import Contact from '../components/Contact.vue'; // Adjust import paths for components
-import FAQs from '../components/FAQs.vue'; // Adjust import paths for components
-import Restaurants from '../components/Restaurants.vue'; // Adjust import paths for components
+import Home from '../views/Home.vue'; // Import your Home component
+import Restaurants from '../views/Restaurants.vue'; // Import your Restaurants component
+import Contact from '../views/Contact.vue'; // Import your Contact component
+import FAQ from '../views/FAQ.vue'; // Import your FAQ component
 
 const routes = [
   { path: '/', component: Home },
   { path: '/restaurants', component: Restaurants },
-  { path: '/faq', component: FAQs },
   { path: '/contact', component: Contact },
+  { path: '/faq', component: FAQ }
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes
 });
 
 export default router;
-
-
-createApp(App).use(router).mount('#app');
