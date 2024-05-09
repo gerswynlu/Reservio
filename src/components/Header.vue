@@ -1,16 +1,21 @@
 <template>
-    <header>
-      <div class="logo">Logo?</div>
-      <nav>
-        <button @click="goTo('/')">Home</button>
-          <button @click="goTo('/restaurants')">Restaurants</button>
-          <button @click="goTo('/faq')">FAQ</button>
-          <button @click="goTo('/contact')">Contact Us</button>
-      </nav>
-    </header>
-  </template>
-  
-  <script>
+  <div class="header-header">
+    <div>
+      <!-- Make the logo clickable -->
+      <a href="/">
+        <img src="/logo.png" class="logo"/>
+      </a>
+    </div>
+    <nav>
+      <button @click="goTo('/')">Home</button>
+      <button @click="goTo('/restaurants')">Restaurants</button>
+      <button @click="goTo('/faq')">FAQs</button>
+      <button @click="goTo('/contact')">Contact Us</button>
+    </nav>
+  </div>
+</template>
+
+<script>
 export default {
   methods: {
     goTo(route) {
@@ -20,21 +25,29 @@ export default {
 }
 </script>
 
-  
-  <style scoped>
-  header {
-    background-color: #333; /* Header background color */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center align items vertically */
-    justify-content: space-between; /* Space out items horizontally */
-  }
-  
-  button { /* Home, restaurants button */
+<style scoped>
+.header-header {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/image/1.jpg');
+  color: #fff; /* Text color */
+  padding: 10px 50px; /* Padding */
+  height: 140px;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+button:hover {
+  background-color: #bababa; 
+  color: #000000; 
+ 
+  transform: scale(1.1);
+
+}
+
+button { /* Home, restaurants button */
   padding: 10px 20px; /* Adjust padding as needed */
-  margin: 0 10px; /* Adjust margin as needed */
-  background-color: #dde1e6; /* Button background color */
+  margin: 0 20px; /* Adjust margin as needed */
+  background-color: #535353; /* Button background color */
   color: rgb(95, 62, 62); /* Text color */
   border: none; /* Remove border */
   border-radius: 5px; /* Rounded corners */
@@ -42,19 +55,22 @@ export default {
   font-size: 16px; /* Font size */
 }
 
+.logo {
+  width: 180px;
+  height: auto;
+  margin-top: 7px;
+  margin-left: 50px;
+ 
+}
 
-  .logo {
-    font-size: 24px; /* Logo font size */
-  }
-  
-  nav {
-    display: flex; /* Use flexbox for layout */
-  }
-  
-  nav a {
-    color: #fff; /* Link color */
-    text-decoration: none; /* Remove underline */
-    margin-left: 20px; /* Add spacing between links */
-  }
-  </style>
-  
+nav {
+  display: flex; /* Use flexbox for layout */
+  margin-right: 70px;
+}
+
+nav button {
+  color: #fff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+   /* Add spacing between links */
+}
+</style>

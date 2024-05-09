@@ -1,38 +1,33 @@
 <template>
     <div class="header-container">
-      <div class="header-image">
-        <img src="../image/headerf.jpg" alt="Header Image">
-      </div>
-      <header>
-        <div id="app">
-          <nav>
-            <button @click="goTo('/')">Home</button>
-            <button @click="goTo('/restaurants')">Restaurants</button>
-            <button @click="goTo('/faq')">FAQ</button>
-            <button @click="goTo('/contact')">Contact Us</button>
-          </nav>
-        </div>
-      </header>
+      <Header/>
+      
   
       <div class="contact-container">
-        <h2>FAQS</h2>
+        <h2>Contact Us</h2>
         <div class="contact-info">
-
-          <p> ALPHA Q </p> 
-
+          <p>Email: gerswynlu@ust.edu.ph </p>
+          <p>Phone: +1234567890</p>
+          <p>Address: UST, MANILA</p>
         </div>
       </div>
     </div>
   </template>
   
   <script>
-  export default {
-    methods: {
-      goTo(route) {
-        this.$router.push(route);
-      }
+  import Header from '@/components/Header.vue';
+
+export default {
+  name:'Contact',
+  components:{
+    Header
+  },
+  methods: {
+    goTo(route) {
+      this.$router.push(route);
     }
   }
+}
   </script>
   
   <style scoped>

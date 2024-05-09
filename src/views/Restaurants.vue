@@ -1,52 +1,34 @@
 <template>
-   <div class="header-container">
-     <div class="header-image">
-       <img src="../image/headerf.jpg" alt="Header Image">
-     </div>
-     <header>
-      <div id="app">
-        <nav>
-  <a class="button" href="/">Home</a>
-  <a class="button" href="/restaurants">Restaurants</a>
-  <a class="button" href="/contact">Reservation</a>
-  <a class="button" href="/faq">FAQ</a>
-  <a class="button" href="/contact">Contact Us</a>
-</nav>
+  <div class="header-container">
+    <Header/>
+    
 
-      <main>
-        <router-view></router-view>
-      </main>
-      </div>
-     </header>
-
-     
-     
-     <div class="top-restaurants">
-      <h2>Top Restaurants</h2>
+    <div class="top-restaurants">
+      <h2>Partner Restaurants</h2>
       <div class="restaurant-cards">
         <!-- Restaurant Card 1 -->
-        <div class="restaurant-card">
-          <img src="../image/wolfgang.jpeg" alt="Wolfgang Image">
-          <div class="restaurant-info">
-            <h3>Wolfgang Steakhouse</h3>
-            <p>Just like a well-cooked steak, the restaurant boasts of masculine and old-world charm. It incorporates the same design elements of original locations in New York, such as a long, mahogany solid wood bar, wooden planked floors, wood wainscoting, alabaster chandeliers and mosaic tile ceiling reminiscent of the original Gustavino tile ceiling of the first location in New York.</p>
+        <router-link to="/wolfgang">
+          <div class="restaurant-card">
+            <img src="../image/wolfgang.jpeg" alt="Wolfgang Image">
+            <div class="restaurant-info">
+              <h3>Wolfgang Steakhouse</h3>
+              <p>Just like a well-cooked steak, the restaurant boasts of masculine and old-world charm. It incorporates the same design elements of original locations in New York, such as a long, mahogany solid wood bar, wooden planked floors, wood wainscoting, alabaster chandeliers and mosaic tile ceiling reminiscent of the original Gustavino tile ceiling of the first location in New York.</p>
+            </div>
+            
           </div>
-          <div class="button">
-            <button>Book Now</button>
-          </div>
-        </div>
+        </router-link>
         <!-- Restaurant Card 2 -->
+        <router-link to="/gallery">
         <div class="restaurant-card">
-          <img src="../image/mamou.jpg" alt="Mamou Image">
+          <img src="../image/gallery-by-chele.jpg" alt="Gallery Image">
           <div class="restaurant-info">
-            <h3>Mamou</h3>
-            <p>Mamou Prime coming from the popular chain of restaurants “Mamou” is now ready to serve you at The Podium.</p>
-            <p>Mamou Prime serves quality and flavorful dishes. They have an immensely wide variety of offerings. Don’ t forget to try their popular home-kitchen dishes, especially their famous steak and pasta.</p>
+            <h3>Gallery by Chele</h3>
+            <p>Gallery by Chele, formerly Gallery VASK, is a modern restaurant that uses local ingredients to create a dining experience that is rooted in Filipino heritage but not bound by it.</p>
+            <p> It takes its roots from the world-class standards of fine food and service that its previous degustation-only Gallery VASK was known for.</p>
           </div>
-          <div class="button">
-            <button>Book Now</button>
-          </div>
+          
         </div>
+      </router-link>
         <!-- Restaurant Card 3 -->
         <div class="restocard">
           <div class="restaurant-card">
@@ -55,40 +37,41 @@
             <h3>China Blue by Jereme Leung</h3>
             <p>The premier Chinese restaurant of Conrad Manila. Conrad Manila has partnered with Chinese celebrity master chef, Jereme Leung, who is responsible for creating the menu for the restaurant. China Blue by Jereme Leung features dishes prepared using traditional Chinese cooking techniques with a modern approach to presentation.</p>
           </div>
-        <div class="button">
-          <button>Book Now</button>
-        </div>
+       
         </div>
         </div>
         <!-- Restaurant Card 4 -->
         <div class="restaurant-card">
-          <img src="../image/senju.jpg" alt="Mamou Image">
+          <img src="../image/senju.jpg" alt="Senju Image">
           <div class="restaurant-info">
             <h3>Senju</h3>
             <p>Artistically created and presented by a team of talented chefs that aim to bring out the real flavours of Japan, Senju’s gourmet creations will have you spellbound. The dishes use fresh, quality ingredients and are prepared in a cooking style that preserves each ingredient’s flavour and balances overall taste.</p>
           </div>
-          <div class="button">
-            <button>Book Now</button>
-          </div>
+      
         </div>
         </div>
       </div>
     </div>
  </template>
 
- 
 <script>
+import Header from '@/components/Header.vue';
+
 export default {
-  methods: {
-    goTo(route) {
-      this.$router.push(route);
-    }
+name:'Contact',
+components:{
+  Header
+},
+methods: {
+  goTo(route) {
+    this.$router.push(route);
   }
 }
+
+    }
 </script>
 
-
- <style scoped>
+<style scoped>
  .restocard{
   flex-wrap: wrap;
  }
@@ -162,7 +145,7 @@ export default {
 
 nav ul li a:hover {
   color: #ffffff; /* Change color on hover */
-  text-shadow: 0 0 10px #bfff00; /* Add a glowing effect */
+  text-shadow: 0 0 10px #ededed; /* Add a glowing effect */
   font-size: 30px; /* Increase font size on hover */
   outline: none; /* Remove the outline */
 }
@@ -186,6 +169,7 @@ nav ul li a:hover {
  }
  
  .restaurant-card {
+  color: black;
    width: 300px;
    background-color: #f4f4f4;
    border-radius: 10px;
@@ -233,6 +217,15 @@ nav ul li a:hover {
 
 .button button:hover {
   background-color: #44464a; /* Darken color on hover */
+}
+
+.restaurant-card {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
 }
 
  </style>
