@@ -30,7 +30,7 @@
         </div>
       </router-link>
         <!-- Restaurant Card 3 -->
-        <div class="restocard">
+        <router-link to="/china">
           <div class="restaurant-card">
           <img src="../image/chinablue.jpg" alt="China Blue Image">
           <div class="restaurant-info">
@@ -39,8 +39,9 @@
           </div>
        
         </div>
-        </div>
+      </router-link>
         <!-- Restaurant Card 4 -->
+        <router-link to="/senju">
         <div class="restaurant-card">
           <img src="../image/senju.jpg" alt="Senju Image">
           <div class="restaurant-info">
@@ -49,6 +50,7 @@
           </div>
       
         </div>
+      </router-link>
         </div>
       </div>
     </div>

@@ -7,7 +7,8 @@
         <h2>Contact Us</h2>
         <div class="contact-info">
           <p>Email: gerswynlu@ust.edu.ph </p>
-          <p>Phone: +1234567890</p>
+          <p>Email: kevinignacio.tiongson.cics@ust.edu.ph </p>
+          <p>Phone: 09171560804</p>
           <p>Address: UST, MANILA</p>
         </div>
       </div>

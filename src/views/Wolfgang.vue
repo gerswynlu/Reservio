@@ -3,6 +3,9 @@
     <Header />
     <div class="wolfgang-content">
       <div class="restaurant-card">
+        <div class="back-button" @click="goBack">
+          <button>Back</button>
+        </div>
         <h3 class="heading">Wolfgang Steakhouse</h3>
         <img src="../image/wolfgang.jpeg" alt="Wolfgang Image" class="restaurant-image">
         <div class="restaurant-info">
@@ -39,6 +42,10 @@ export default {
   methods: {
     goTo(route) {
       this.$router.push(route);
+    },
+
+    goBack() {
+      this.$router.push("/restaurants");
     },
 
     handleBooking(bookNum) {
@@ -106,6 +113,22 @@ export default {
   margin-bottom: 20px;
   margin-left: 130px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.back-button {
+  position: absolute;
+  top: 20px; /* Adjust the top position */
+  left: 20px; /* Adjust the left position */
+  
+}
+
+.back-button button {
+  background-color: #54575a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 .heading {

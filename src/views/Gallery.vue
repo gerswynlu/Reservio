@@ -3,6 +3,9 @@
       <Header />
       <div class="gallery-content">
         <div class="restaurant-card">
+          <div class="back-button" @click="goBack">
+            <button>Back</button>
+          </div>
           <h3 class="heading">Gallery by Chele</h3>
           <img src="../image/gallery-by-chele.jpg" alt="Gallery Image" class="restaurant-image">
           <div class="restaurant-info">
@@ -11,7 +14,7 @@
                 local ingredients to create a dining experience that is rooted in 
                 Filipino heritage but not bound by it. It takes its roots from the world-class standards of fine food and service that 
                 its previous degustation-only Gallery VASK was known for.</p>
-    
+  
             <p>Inspired by the Philippines and the Southeast Asian region, the European Chef Chele Gonzalez 
                 collaborates with the Filipino Chef Carlos Villaflor and the rest of Team Gallery to welcome 
                 all lovers of good food (and good times!) at Gallery by Chele. The restaurant’s interiors, conceptualized by 
@@ -43,6 +46,10 @@
         this.$router.push(route);
       },
   
+      goBack() {
+        this.$router.push("/restaurants");
+      },
+  
       handleBooking(bookNum) {
         let url = "";
         if (bookNum === 1) {
@@ -56,19 +63,19 @@
         }
   
         Swal.fire({
-        title: 'You are about to make a reservation.',
-        text: "Do you want to proceed?",
-        icon: 'info',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'Cancel'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.open(url, '_blank');
-        }
-      });
+          title: 'You are about to make a reservation.',
+          text: "Do you want to proceed?",
+          icon: 'info',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes',
+          cancelButtonText: 'Cancel'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open(url, '_blank');
+          }
+        });
       },
     },
   };
@@ -108,6 +115,21 @@
     margin-bottom: 20px;
     margin-left: 130px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px; /* Adjust the top position */
+    left: 20px; /* Adjust the left position */
+  }
+  
+  .back-button button {
+    background-color: #54575a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
   }
   
   .heading {

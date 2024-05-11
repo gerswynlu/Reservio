@@ -13,6 +13,18 @@
             <p><b>Vision:</b></p>
             <p>"Our vision at Reservio is to become the go-to destination for diners seeking hassle-free restaurant reservations. We aim to revolutionize the way people dine out by offering a comprehensive platform that features all partnered restaurants, making it effortless for customers to find and book tables at their favorite eateries. By streamlining the reservation process, we envision a future where dining out is always a delightful experience."</p>
           </div>
+
+          <!-- Add space above this paragraph -->
+          <p style="margin-top: 20px;"><b>We would like to thank our sponsors:</b></p> 
+
+          <!-- First Sponsor Image with Hyperlink -->
+          <a href="https://www.shangri-la.com/">
+            <img src="../image/shang.png" alt="Sponsor Image" class="sponsor-image">
+          </a>
+          <!-- Second Sponsor Image with Hyperlink -->
+          <a href="https://www.hilton.com/en/hotels/mnlmbci-conrad-manila/">
+            <img src="../image/conrad.png" alt="Another Sponsor Image" class="sponsor-image">
+          </a>
         </div>
       </div>
     </div>
@@ -75,6 +87,13 @@ export default {
   max-width: 200px; /* Adjust the maximum width of the logo */
 }
 
+/* Styling for Sponsor Image */
+.sponsor-image {
+  display: inline-block;
+  margin: 20px; /* Adjust the margin as needed */
+  max-width: 100px; /* Adjust the maximum width of the sponsor image */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
 
 .contact-info {
   margin-top: 20px;
